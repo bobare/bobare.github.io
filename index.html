@@ -79,6 +79,23 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
+    .app-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* App Icon Styling */
+    .app-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      object-fit: cover;
+      background-color: #f1f5f9;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
     .app-info h2 {
       font-size: 1.125rem;
       font-weight: 600;
@@ -87,7 +104,7 @@
     .app-info p {
       font-size: 0.875rem;
       color: var(--text-muted);
-      margin-top: 0.25rem;
+      margin-top: 0.15rem;
     }
 
     .view-link {
@@ -125,42 +142,63 @@
   <main>
     <ul class="policy-list">
       
+      <!-- App Item -->
       <li class="policy-card">
-        <div class="app-info">
-          <h2>ChronoPulse</h2>
-          <p>Privacy Policy</p>
+        <div class="app-details">
+          <!-- Replace src with your icon file path (e.g., chronopulse/icon.png) -->
+          <img class="app-icon" src="chronopulse/icon.png" alt="ChronoPulse Icon" onerror="this.src='https://via.placeholder.com/48?text=CP'">
+          <div class="app-info">
+            <h2>ChronoPulse</h2>
+            <p>Privacy Policy</p>
+          </div>
         </div>
         <a class="view-link" href="https://bobare.github.io/chronopulse/">View Policy</a>
       </li>
 
+      <!-- App Item -->
       <li class="policy-card">
-        <div class="app-info">
-          <h2>ScratchTopUp</h2>
-          <p>Privacy Policy</p>
+        <div class="app-details">
+          <img class="app-icon" src="ScratchTopUp/icon.png" alt="ScratchTopUp Icon" onerror="this.src='https://via.placeholder.com/48?text=ST'">
+          <div class="app-info">
+            <h2>ScratchTopUp</h2>
+            <p>Privacy Policy</p>
+          </div>
         </div>
         <a class="view-link" href="https://bobare.github.io/ScratchTopUp/">View Policy</a>
       </li>
 
+      <!-- App Item -->
       <li class="policy-card">
-        <div class="app-info">
-          <h2>Noted</h2>
-          <p>Privacy Policy</p>
+        <div class="app-details">
+          <img class="app-icon" src="noted-privacy/icon.png" alt="Noted Icon" onerror="this.src='https://via.placeholder.com/48?text=N'">
+          <div class="app-info">
+            <h2>Noted</h2>
+            <p>Privacy Policy</p>
+          </div>
         </div>
         <a class="view-link" href="https://bobare.github.io/noted-privacy/">View Policy</a>
       </li>
 
+      <!-- App Item -->
       <li class="policy-card">
-        <div class="app-info">
-          <h2>Linet</h2>
-          <p>Privacy Policy</p>
+        <div class="app-details">
+          <img class="app-icon" src="Linet/icon.png" alt="Linet Icon" onerror="this.src='https://via.placeholder.com/48?text=L'">
+          <div class="app-info">
+            <h2>Linet</h2>
+            <p>Privacy Policy</p>
+          </div>
         </div>
         <a class="view-link" href="https://bobare.github.io/Linet/">View Policy</a>
       </li>
 
+      <!-- App Item -->
       <li class="policy-card">
-        <div class="app-info">
-          <h2>Torch</h2>
-          <p>Privacy Policy</p>
+        <div class="app-details">
+          <img class="app-icon" src="torch/icon.png" alt="Torch Icon" onerror="this.src='https://via.placeholder.com/48?text=T'">
+          <div class="app-info">
+            <h2>Torch</h2>
+            <p>Privacy Policy</p>
+          </div>
         </div>
         <a class="view-link" href="https://bobare.github.io/torch/">View Policy</a>
       </li>
