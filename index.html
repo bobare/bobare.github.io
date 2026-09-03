@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Krystalgraphix | Privacy Policies</title>
+  <title>Krystalgraphix | Privacy Directory</title>
   <style>
     :root {
-      --bg-color: #f8fafc;
-      --card-bg: #ffffff;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --primary: #2563eb;
-      --primary-hover: #1d4ed8;
-      --border: #e2e8f0;
+      --bg-dark: #090d16;
+      --card-bg: rgba(18, 26, 43, 0.6);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover-border: rgba(99, 102, 241, 0.4);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-glow: #6366f1;
+      --cyan-glow: #06b6d4;
+      --button-bg: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+      --button-hover: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
     }
 
     * {
@@ -23,110 +26,179 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-color);
+      background-color: var(--bg-dark);
       color: var(--text-main);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       align-items: center;
-      padding: 2rem 1rem;
+      padding: 3rem 1.5rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Glow Effects in Background */
+    body::before, body::after {
+      content: '';
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: -1;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    body::before {
+      background: var(--accent-glow);
+      top: -50px;
+      left: 20%;
+    }
+    body::after {
+      background: var(--cyan-glow);
+      bottom: 50px;
+      right: 20%;
     }
 
     header {
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
       max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Developer Logo Styling */
+    .brand-logo-wrapper {
+      position: relative;
+      margin-bottom: 1.25rem;
+    }
+
+    .brand-logo-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--accent-glow), var(--cyan-glow));
+      filter: blur(12px);
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    .brand-logo {
+      position: relative;
+      z-index: 1;
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      object-fit: cover;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      display: block;
     }
 
     header h1 {
-      font-size: 2.25rem;
-      font-weight: 700;
-      letter-spacing: -0.025em;
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 0.5rem;
     }
 
     header p {
       color: var(--text-muted);
       font-size: 1rem;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     main {
       width: 100%;
-      max-width: 600px;
+      max-width: 620px;
     }
 
     .policy-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.25rem;
     }
 
     .policy-card {
       background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
       padding: 1.25rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     }
 
     .policy-card:hover {
-      border-color: #cbd5e1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+      border-color: var(--card-hover-border);
+      box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
     }
 
     .app-details {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.25rem;
     }
 
     /* App Icon Styling */
     .app-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
       object-fit: cover;
-      background-color: #f1f5f9;
-      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       flex-shrink: 0;
     }
 
     .app-info h2 {
-      font-size: 1.125rem;
+      font-size: 1.15rem;
       font-weight: 600;
+      color: #f1f5f9;
+      letter-spacing: -0.01em;
     }
 
     .app-info p {
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
-      margin-top: 0.15rem;
+      margin-top: 0.2rem;
     }
 
     .view-link {
       text-decoration: none;
-      color: var(--primary);
+      color: #ffffff;
       font-weight: 600;
-      font-size: 0.9rem;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      background-color: #eff6ff;
-      transition: background-color 0.2s, color 0.2s;
+      font-size: 0.875rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 10px;
+      background: var(--button-bg);
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+      transition: all 0.2s ease;
+      white-space: nowrap;
     }
 
     .view-link:hover {
-      background-color: var(--primary);
-      color: #ffffff;
+      background: var(--button-hover);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+      transform: scale(1.02);
     }
 
     footer {
       margin-top: auto;
-      padding-top: 3rem;
-      font-size: 0.875rem;
+      padding-top: 4rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
       text-align: center;
     }
@@ -135,6 +207,10 @@
 <body>
 
   <header>
+    <div class="brand-logo-wrapper">
+      <!-- Replace 'logo.png' with your developer logo path -->
+      <img class="brand-logo" src="logo.png" alt="Krystalgraphix Logo" onerror="this.src='https://via.placeholder.com/72/121a2b/ffffff?text=KG'">
+    </div>
     <h1>Krystalgraphix</h1>
     <p>Official Privacy Policy directory for applications developed by Krystalgraphix.</p>
   </header>
@@ -142,11 +218,10 @@
   <main>
     <ul class="policy-list">
       
-      <!-- App Item -->
+      <!-- ChronoPulse -->
       <li class="policy-card">
         <div class="app-details">
-          <!-- Replace src with your icon file path (e.g., chronopulse/icon.png) -->
-          <img class="app-icon" src="chronopulse/icon.png" alt="ChronoPulse Icon" onerror="this.src='https://via.placeholder.com/48?text=CP'">
+          <img class="app-icon" src="chronopulse/icon.png" alt="ChronoPulse Icon" onerror="this.src='https://via.placeholder.com/52/121a2b/ffffff?text=CP'">
           <div class="app-info">
             <h2>ChronoPulse</h2>
             <p>Privacy Policy</p>
@@ -155,10 +230,10 @@
         <a class="view-link" href="https://bobare.github.io/chronopulse/">View Policy</a>
       </li>
 
-      <!-- App Item -->
+      <!-- ScratchTopUp -->
       <li class="policy-card">
         <div class="app-details">
-          <img class="app-icon" src="ScratchTopUp/icon.png" alt="ScratchTopUp Icon" onerror="this.src='https://via.placeholder.com/48?text=ST'">
+          <img class="app-icon" src="ScratchTopUp/icon.png" alt="ScratchTopUp Icon" onerror="this.src='https://via.placeholder.com/52/121a2b/ffffff?text=ST'">
           <div class="app-info">
             <h2>ScratchTopUp</h2>
             <p>Privacy Policy</p>
@@ -167,10 +242,10 @@
         <a class="view-link" href="https://bobare.github.io/ScratchTopUp/">View Policy</a>
       </li>
 
-      <!-- App Item -->
+      <!-- Noted -->
       <li class="policy-card">
         <div class="app-details">
-          <img class="app-icon" src="noted-privacy/icon.png" alt="Noted Icon" onerror="this.src='https://via.placeholder.com/48?text=N'">
+          <img class="app-icon" src="noted-privacy/icon.png" alt="Noted Icon" onerror="this.src='https://via.placeholder.com/52/121a2b/ffffff?text=N'">
           <div class="app-info">
             <h2>Noted</h2>
             <p>Privacy Policy</p>
@@ -179,10 +254,10 @@
         <a class="view-link" href="https://bobare.github.io/noted-privacy/">View Policy</a>
       </li>
 
-      <!-- App Item -->
+      <!-- Linet -->
       <li class="policy-card">
         <div class="app-details">
-          <img class="app-icon" src="Linet/icon.png" alt="Linet Icon" onerror="this.src='https://via.placeholder.com/48?text=L'">
+          <img class="app-icon" src="Linet/icon.png" alt="Linet Icon" onerror="this.src='https://via.placeholder.com/52/121a2b/ffffff?text=L'">
           <div class="app-info">
             <h2>Linet</h2>
             <p>Privacy Policy</p>
@@ -191,10 +266,10 @@
         <a class="view-link" href="https://bobare.github.io/Linet/">View Policy</a>
       </li>
 
-      <!-- App Item -->
+      <!-- Torch -->
       <li class="policy-card">
         <div class="app-details">
-          <img class="app-icon" src="torch/icon.png" alt="Torch Icon" onerror="this.src='https://via.placeholder.com/48?text=T'">
+          <img class="app-icon" src="torch/icon.png" alt="Torch Icon" onerror="this.src='https://via.placeholder.com/52/121a2b/ffffff?text=T'">
           <div class="app-info">
             <h2>Torch</h2>
             <p>Privacy Policy</p>
